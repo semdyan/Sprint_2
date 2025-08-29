@@ -7,7 +7,7 @@ class EmployeeSalary:
         self.hours = hours
         self.rest_days = rest_days
         self.email = email
-        self.hourly_payment = EmployeeSalary.hourly_payment
+        self.employee_salary = hours * self.hourly_payment
 
     @classmethod
     def get_hours(cls, name, rest_days, email):
@@ -24,9 +24,13 @@ class EmployeeSalary:
         cls.hourly_payment = hourly_payment
 
     def salary(self):
-        self.salary = self.hours * self.hourly_payment
+        self.employee_salary = self.hours * self.hourly_payment
+        return self.employee_salary
 
-EmployeeSalary.set_hourly_payment(1)
-emp = EmployeeSalary.get_email('das', 22, 1)
+
+emp = EmployeeSalary('dsa', 22, 1, 'da')
+print(emp.employee_salary)
+emp.hours = 1
 emp.salary()
-print(emp.salary)
+print(emp.__dict__)
+print(emp.employee_salary) 
