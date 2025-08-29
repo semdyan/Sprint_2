@@ -27,10 +27,12 @@ class EmployeeSalary:
         self.employee_salary = self.hours * self.hourly_payment
         return self.employee_salary
 
-
-emp = EmployeeSalary('dsa', 22, 1, 'da')
-print(emp.employee_salary)
-emp.hours = 1
+emp = EmployeeSalary('das', 22, 1, 'sda')
+print(emp.__dict__)
+emp.hours = 2
 emp.salary()
 print(emp.__dict__)
-print(emp.employee_salary) 
+emp.hourly_payment = 4
+emp.salary()
+print(emp.__dict__)
+
